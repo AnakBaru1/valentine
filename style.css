@@ -1,0 +1,498 @@
+/* --- VARIABLES & RESET --- */
+
+:root {
+    --primary: #be185d;
+    --accent: #ff4d6d;
+    --bg-color: #fff0f3;
+    --text-main: #333;
+    --glass: rgba(255, 255, 255, 0.8);
+    --font-script: 'Dancing Script', cursive;
+    /* Font Baru untuk Harapan */
+    --font-modern: 'Outfit', sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: var(--font-modern);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+
+/* --- BACKGROUND --- */
+
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, #ffdde1, #fff0f3);
+    z-index: -2;
+}
+
+
+/* --- HERO SECTION --- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 50%;
+    z-index: 2;
+}
+
+.title-main {
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+.subtitle {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.highlight {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.typing-wrapper {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #555;
+    height: 30px;
+}
+
+.hero-img {
+    width: 400px;
+    height: 500px;
+    position: relative;
+}
+
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 200px 200px 0 0;
+    box-shadow: 20px 20px 0 rgba(190, 24, 93, 0.1);
+    transition: transform 0.5s;
+}
+
+.hero-img:hover img {
+    transform: scale(1.02);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0.6;
+    animation: bounce 2s infinite;
+}
+
+
+/* --- STORY SECTION --- */
+
+.story-container {
+    padding: 8rem 10%;
+}
+
+.story-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 8rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+.story-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.story-text h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.story-text p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+
+/* --- GALLERY INFINITE --- */
+
+.gallery-section {
+    padding: 4rem 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--primary);
+}
+
+.gallery-sub {
+    margin-bottom: 3rem;
+    color: #666;
+    font-style: italic;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: scroll 25s linear infinite;
+    gap: 30px;
+    padding-left: 100%;
+}
+
+.card-photo {
+    width: 280px;
+    height: 380px;
+    background: white;
+    padding: 10px 10px 50px 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
+    flex-shrink: 0;
+    transform: rotate(-2deg);
+}
+
+.card-photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.card-photo:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.3);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* --- NEW HOPES SECTION (MODERN & CUTE) --- */
+
+.hopes-section {
+    padding: 6rem 10%;
+    text-align: center;
+    position: relative;
+}
+
+.hopes-title {
+    font-family: var(--font-script);
+    /* Font sambung */
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 4rem;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+.hopes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.hope-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Animasi Floating (Gerak Naik Turun) */
+
+.hope-card:nth-child(1) {
+    animation: float 4s ease-in-out infinite;
+}
+
+.hope-card:nth-child(2) {
+    animation: float 4.5s ease-in-out infinite 0.5s;
+}
+
+.hope-card:nth-child(3) {
+    animation: float 3.5s ease-in-out infinite 1s;
+}
+
+.hope-card:nth-child(4) {
+    animation: float 4s ease-in-out infinite 1.5s;
+}
+
+
+/* Warna Aksen Tiap Kartu */
+
+.card-pink {
+    border-bottom: 5px solid #ff4d6d;
+}
+
+.card-blue {
+    border-bottom: 5px solid #4cc9f0;
+}
+
+.card-purple {
+    border-bottom: 5px solid #7209b7;
+}
+
+.card-yellow {
+    border-bottom: 5px solid #fca311;
+}
+
+
+/* Icon Style */
+
+.hope-card .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hope-card h3 {
+    font-family: var(--font-modern);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.hope-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Hover Effect */
+
+.hope-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* --- INTERACTIVE SECTION --- */
+
+.interactive-section {
+    padding: 6rem 20px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.btn-glow {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 2rem;
+    box-shadow: 0 0 20px var(--accent);
+    transition: transform 0.3s;
+}
+
+.btn-glow:hover {
+    transform: scale(1.1);
+    background: var(--accent);
+}
+
+.hidden-content {
+    display: none;
+    margin-top: 3rem;
+    animation: popUp 0.6s ease;
+}
+
+.funny-sticker {
+    font-size: 4rem;
+    margin-top: 1rem;
+    animation: shake 2s infinite;
+}
+
+
+/* --- FOOTER & MUSIC --- */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary);
+    color: white;
+}
+
+.music-player {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.music-player i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.playing i {
+    animation-play-state: running;
+}
+
+
+/* --- ANIMATIONS --- */
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* --- MOBILE --- */
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 4rem;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+    .title-main {
+        font-size: 3.5rem;
+    }
+    .story-row {
+        flex-direction: column !important;
+        gap: 2rem;
+        text-align: center;
+    }
+    .story-img img {
+        width: 100%;
+    }
+    .card-photo {
+        width: 200px;
+        height: 300px;
+    }
+    .hopes-title {
+        font-size: 3rem;
+    }
+}

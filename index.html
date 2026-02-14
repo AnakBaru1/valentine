@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Outfit:wght@300;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-gradient"></div>
+
+    <div class="music-player" id="musicToggle">
+        <div class="vinyl-icon"><i class="fas fa-compact-disc"></i></div>
+        <div class="track-info">Play Music</div>
+    </div>
+    <audio id="bgMusic" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="subtitle fade-in">Happy Valentine's Day</p>
+            <h1 class="title-main">To My Dearest <br> <span class="highlight">Partner</span></h1>
+            <div class="typing-wrapper">
+                <span id="typing"></span><span class="cursor">|</span>
+            </div>
+            <div class="scroll-hint">
+                <p>Scroll to begin</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="hero-img fade-in">
+            <img src="foto1.jpeg" alt="Main Photo">
+        </div>
+    </header>
+
+    <section class="story-container">
+        <div class="story-row reveal">
+            <div class="story-img">
+                <img src="fotoku.jpeg" alt="Story 1">
+            </div>
+            <div class="story-text">
+                <h2>The Beginning</h2>
+                <p>Ingat nggak waktu pertama kali kita fotbar? yaa pas graduation wkwk, Waktu itu aku nggak nyangka kalau orang di depan aku ini bakal jadi semesta aku sekarang.</p>
+                <span class="date">Chapter 1</span>
+            </div>
+        </div>
+
+        <div class="story-row reverse reveal">
+            <div class="story-text">
+                <h2>Every Moment</h2>
+                <p>Setiap jalan bareng, makan bareng, atau sekadar video call nggak jelas, aku selalu suka sama kamu.</p>
+                <span class="date">Chapter 2</span>
+            </div>
+            <div class="story-img">
+                <img src="foto2.jpeg" alt="Story 2">
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section reveal">
+        <h2 class="section-title">Our Memories 📸</h2>
+        <p class="gallery-sub">Hover fotonya untuk melihat lebih jelas</p>
+
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <div class="card-photo"><img src="foto3.jpeg"></div>
+                <div class="card-photo"><img src="foto4.jpeg"></div>
+                <div class="card-photo"><img src="foto5.jpeg"></div>
+                <div class="card-photo"><img src="foto6.jpeg"></div>
+                <div class="card-photo"><img src="foto2.jpeg"></div>
+                <div class="card-photo"><img src="foto1.jpeg"></div>
+                <div class="card-photo"><img src="fotoku.jpeg"></div>
+                <div class="card-photo"><img src="foto7.jpeg"></div>
+                <div class="card-photo"><img src="foto8.jpeg"></div>
+                <div class="card-photo"><img src="foto9.jpeg"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hopes-section reveal">
+        <h2 class="hopes-title">Harapan Kita Nanti ✨</h2>
+
+        <div class="hopes-grid">
+            <div class="hope-card card-pink">
+                <div class="icon">✈️</div>
+                <h3>Traveling</h3>
+                <p>Semoga kita bisa keliling dunia bareng ke tempat impian kita.</p>
+            </div>
+
+            <div class="hope-card card-blue">
+                <div class="icon">🏡</div>
+                <h3>Future Home</h3>
+                <p>Punya tempat tinggal yang nyaman buat kita berdua nanti.</p>
+            </div>
+
+            <div class="hope-card card-purple">
+                <div class="icon">👵👴</div>
+                <h3>Grow Old</h3>
+                <p>Menua bersama, tetap ketawa bareng sampai gigi ompong.</p>
+            </div>
+
+            <div class="hope-card card-yellow">
+                <div class="icon">❤️</div>
+                <h3>Stay in Love</h3>
+                <p>Semoga rasa sayang ini nggak pernah hilang, apapun masalahnya.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive-section reveal">
+        <h2>One Last Thing...</h2>
+        <p>Ada pesan rahasia buat kamu.</p>
+
+        <button id="surpriseBtn" class="btn-glow">Buka Pesan 🎁</button>
+
+        <div id="hiddenMessage" class="hidden-content">
+            <h3>I Love You More Than Words Can Say! ❤️</h3>
+            <p>Terima kasih sudah jadi bagian terbaik di hidupku.</p>
+            <div class="funny-sticker">🐻❤️🐰</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Made with all my ❤️ for You.</p>
+        <small>© 2026 Valentine Project</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
